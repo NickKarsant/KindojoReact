@@ -2,11 +2,12 @@ import * as React from 'react';
 import {Box, Link, Container, Grid,Typography, Button, Stack } from '@mui/material';
 
 
+
 function Footer() {
 
 return(
   <footer>
-    <Box sx={{width: '100%', marginLeft: -2}} px={{xs:3}} py={{xs:5}} bgcolor='black' color='white'>
+    <Box sx={{m: -1}} p={{xs:3}} py={{xs:5}} bgcolor='black' color='white'>
       <Container maxWidth='lg'>
         <Grid container spacing={5}>
           <Grid item xs={12} sm={4}>
@@ -15,7 +16,7 @@ return(
           </Typography>
             <Stack sx={{color:'white'}} spacing={1}>
               <item>Phone: 415-713-1130</item>
-              <item>Email: <a href=''>kindojoflowarts@gmail.com</a></item>
+              <item>Email: kindojoflowarts@gmail.com</item>
             </Stack>
           </Grid>
 
@@ -24,13 +25,11 @@ return(
           <Typography sx={{color:'white', mb: 1}} component='h5'>
             Follow
           </Typography>
-          <Stack spacing={2}>
-            <Link>
-            <a href="https://www.instagram.com/acrofirecircus/?hl=en" target="_blank"> <img src="images/Social Media Icons/iconfinder_2018_social_media_popular_app_logo_instagram_3225191.png" alt="instagram logo"/></a>
+          <Stack direction='row' spacing={2}>
+            <Link href="https://www.instagram.com/acrofirecircus/?hl=en" rel='noreferrer' target="_blank"> <img style={{maxWidth:'40px'}} src={require("../images/Social Media Icons/iconfinder_2018_social_media_popular_app_logo_instagram_3225191.png")} alt="instagram logo"/>
             </Link>
       
-            <Link>
-            <a href="https://www.facebook.com/kindojoflow" target="_blank"> <img src="images/Social Media Icons/iconfinder_2018_social_media_popular_app_logo_facebook_3225194.png" alt="facebook logo"/> </a>
+            <Link href="https://www.facebook.com/kindojoflow" rel='noreferrer' target="_blank"> <img style={{maxWidth:'40px'}} src={require("../images/Social Media Icons/iconfinder_2018_social_media_popular_app_logo_facebook_3225194.png")} alt="facebook logo"/>
             </Link>
         </Stack>
           </Grid>
@@ -40,11 +39,11 @@ return(
             <Typography sx={{color:'white', mb:1 }} component='h4'>
               Donate to the Flow Arts
             </Typography>
-            <Typography paragraph color='white'>
+            <Typography fontSize='12px' color='white'>
               Your donation will be used to purchase practice props of varying sizes 
               to allow people of all ages to participate.
             </Typography>
-            <Button href='https://www.patreon.com/flowartsdojo' rel='noreferrer' target="_blank" size="small">
+            <Button sx={{backgroundColor:'rgb(4, 215, 159)', p: 1, mt: 2, color:'black'}} href='https://www.patreon.com/flowartsdojo' rel='noreferrer' target="_blank" size="small">
               Become a Patron
             </Button>
           </Grid>

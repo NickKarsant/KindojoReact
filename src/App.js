@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Nav from './components/nav'
-import Home from './components/home'
+import Home from './pages/home'
 import Footer from './components/footer'
 
 
