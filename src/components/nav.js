@@ -1,22 +1,21 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
-import {Box, Button, Typography} from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import {Box, Link, Stack} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
+import logo from '../logos/logowithflame.jpg'
+import NavLink from './NavLink'
 
 
 
 
-const navItems = ['Dojo', 'Classes', 'About', 'Contact'];
+const navItems = [{name: 'Dojo', href:'/'}, {name:'Classes', href:'/classes'}, {name:'About', href:'/about'}, {name:'Contact', href:'/contact'}];
 
 function Nav(props) {
-  const place = window.location.href
-  console.log(place.slice(21, place.length))
+  const current = window.location.href.slice(21, window.location.href.length)
+  console.log(current)
+
+const nav = navItems.map((item)=> <NavLink current={current} key={item.name} name={item.name} href={item.href}/>)
+ 
 
   
   return (
@@ -26,16 +25,14 @@ function Nav(props) {
           <Box
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, border: '1px solid red', width: 1/4 }}
+            sx={{ flexGrow: 1, width: 1/4 }}
           >
-          <img src="../logos/logowithflame.jpg" alt="kindojo logo"/>
+          <img src={logo} style={{maxWidth: '250px', width: 'auto', height:'auto'}} alt="kindojo logo"/>
           </Box>
-          <Box sx={{ border: '1px solid green'}}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
+          <Box sx={{width: 2/5}}>
+            <Stack direction='row' spacing={5}>
+              {nav}
+            </Stack>
           </Box>
         </Toolbar>
       </AppBar>
