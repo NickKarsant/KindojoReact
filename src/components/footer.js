@@ -7,7 +7,7 @@ function Footer() {
 
 return(
   <footer>
-    <Box sx={{m: -1}} p={{xs:3}} py={{xs:5}} bgcolor='black' color='white'>
+    <Box p={{xs:3}} py={{xs:5}} bgcolor='black' color='white'>
       <Container maxWidth='lg'>
         <Grid container spacing={5}>
           <Grid item xs={12} sm={4}>

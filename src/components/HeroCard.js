@@ -58,7 +58,7 @@ function HeroCard() {
   const classes = useStyles();
   return (
   <Box  sx={{backgroundColor:'black'}}>
-    <Card sx={{ position: 'absolute', backgroundImage: `url(${Image})`, display: 'flex', alignContent: 'center', justifyContent: 'center', width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundPosition: 'center'}} >
+    <Card sx={{ position: 'absolute', backgroundImage: `url(${Image})`, display: 'flex', alignContent: 'center', justifyContent: 'center', width: '98.7%', height: '100%', backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundPosition: 'center'}} >
       {/* <CardMedia
         sx={{
           position: "absolute",

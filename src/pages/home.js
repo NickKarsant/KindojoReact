@@ -5,11 +5,11 @@ import Mission from '../components/Mission'
 
 
 
-function Home() {
+const Home = () => {
 return (
 <>
-  <HeroCard />
-  <Box sx={{mx: -1, backgroundColor:'rgb(4, 215, 159, 0.1)',}}>
+  {/* <HeroCard /> */}
+  <Box sx={{ backgroundColor:'rgb(233, 248, 244)',}}>
     <Mission />
   </Box>
 </>

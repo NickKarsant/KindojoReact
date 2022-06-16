@@ -12,7 +12,7 @@ const useStyles =  makeStyles((theme) => ({
     },
   }))
 
-function NavLink({name, href, current}) {
+const NavLink = ({name, href, current})  => {
 
  const custom = useStyles();
   
@@ -22,7 +22,7 @@ function NavLink({name, href, current}) {
       underline={current === href ? 'always' : 'hover'} 
       className={custom.hover}
       md={2}
-      sx={{fontSize:'2em',color: 'white', px: 2, textDecorationColor:'rgb(4, 215, 159)' }} 
+      sx={{fontSize:'1.5em',color: 'white', px: 2, textDecorationColor:'rgb(4, 215, 159)' }} 
       href={href}>{name}
     </Link>
   )
