@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Card, CardActions, CardMedia, CardContent, Box, Typography } from '@mui/material';
+import {Box, Card, CardActions, CardMedia, CardContent, Paper, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Image from '../images/Titanic.jpg';
 import ThemeButton from './ThemeButton'
@@ -25,13 +25,6 @@ const useStyles = makeStyles({
     justifyContent: "center"
   },
 
-  /**
-   * Applied to Orginal Card demo
-   * Same vale used in Material-ui Card Demos
-   */
-  media: {
-    height: 140
-  },
   CardActions: {
     width: '100%', 
     display:'flex', 
@@ -64,9 +57,9 @@ function HeroCard() {
 
   const classes = useStyles();
   return (
-  <Box mt={4} sx={{backgroundColor:'black'}}>
-    <Card sx={{position: 'relative'}} className={classes.card}>
-      <CardMedia
+  <Box  sx={{backgroundColor:'black'}}>
+    <Card sx={{ position: 'absolute', backgroundImage: `url(${Image})`, display: 'flex', alignContent: 'center', justifyContent: 'center', width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundPosition: 'center'}} >
+      {/* <CardMedia
         sx={{
           position: "absolute",
           top: 0,
@@ -78,7 +71,10 @@ function HeroCard() {
         alt="cyr wheel"
         image={Image}
         title="cyr wheel Titanic"
-      />
+      /> */}
+      {/* <div style={{ display: 'flex', alignContent: 'center', justifyContent: 'center',position: 'absolute', width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundPosition: 'center'}}>
+
+      </div> */}
       <CardContent className={classes.CardContent}>
         <Typography gutterBottom variant="h5" component="h2">
           Find Your Flow

@@ -8,7 +8,11 @@ function Classes() {
 
 
   return (
-    <div>classes</div>
+    <>
+
+    <Box sx={{width: '500px', backgroundColor:'green', height:'79px'}}></Box>
+    <Box sx={{width: '500px', backgroundColor:'red', height:'1000px'}}>classes</Box>
+    </>
     );
 }
 

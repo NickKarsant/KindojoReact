@@ -15,8 +15,8 @@ return(
             Contact
           </Typography>
             <Stack sx={{color:'white'}} spacing={1}>
-              <item>Phone: 415-713-1130</item>
-              <item>Email: kindojoflowarts@gmail.com</item>
+              <li>Phone: 415-713-1130</li>
+              <li>Email: kindojoflowarts@gmail.com</li>
             </Stack>
           </Grid>
 

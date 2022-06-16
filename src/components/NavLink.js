@@ -4,47 +4,26 @@ import { makeStyles } from '@mui/styles';
 
 
 
-
-
-
-function NavLink({name, href, current}) {
-
-
-
-const custom =  makeStyles((theme) => ({
+const useStyles =  makeStyles((theme) => ({
     hover: {
-     
-      borderRadius: "var(--borderRadius)",
       "&:hover": {
-        transition: 'all 0.3s ease-in-out',
-        textDecorationColor:'rgb(4, 215, 159)'
+        color: 'rgb(4, 215, 159)',
       }
     },
   }))
 
-    
-    // .test::before{
-    //       content: "";
-    //       position: absolute;
-    //       width: 0;
-    //       height: 2px;
-    //       bottom: 0;
-    //       left: 0;
-    //       background-color: green;
-    //       visibility: "hidden";
-    //       transition: all 0.3s ease-in-out;
-        
-    // }
-  
+function NavLink({name, href, current}) {
+
+ const custom = useStyles();
   
 
   return (
     <Link 
-    underline={current === href ? 'always' : 'hover'} 
-    style={custom.hover}
-    // style={{textDecorationColor: 'rgb(4, 215, 159)', transitionDuration: '0.3s ease-in-out'}} 
-    sx={{fontSize:'2em',color: 'white' }} 
-    href={href}>{name}
+      underline={current === href ? 'always' : 'hover'} 
+      className={custom.hover}
+      md={2}
+      sx={{fontSize:'2em',color: 'white', px: 2, textDecorationColor:'rgb(4, 215, 159)' }} 
+      href={href}>{name}
     </Link>
   )
 }
