@@ -4,6 +4,8 @@ import Home from './pages/home'
 import Classes from './pages/classes'
 import Footer from './components/footer'
 import Route from './components/Route'
+import {Box } from '@mui/material';
+
 
 
 
@@ -18,6 +20,8 @@ function App() {
   return (<>
 
     <Nav/>
+    <Box sx={{height: 'auto', width:'auto', py: 6, backgroundColor: '#212121'}}>
+
 
     <Route path='/'>
       <Home/>
@@ -27,6 +31,7 @@ function App() {
       <Classes />
     </Route>
 
+</Box>
     <Footer/>
   </>
   );

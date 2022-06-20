@@ -18,7 +18,7 @@ const nav = navItems.map((item)=> <NavLink current={current} key={item.name} nam
 
   
   return (
-      <AppBar component="nav" position='static' sx={{ backgroundColor: 'black'}}>
+      <AppBar component="nav" position='sticky' sx={{ backgroundColor: 'black'}}>
         <Toolbar>
           <Box
             variant="h6"

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Box, Link, Container, Grid,Typography, Button, Stack } from '@mui/material';
-
+import {Box, Link, Container, Grid,Typography, Stack } from '@mui/material';
+import ThemeButton from '../components/ThemeButton'
 
 
 function Footer() {
@@ -39,13 +39,13 @@ return(
             <Typography sx={{color:'white', mb:1 }} component='h4'>
               Donate to the Flow Arts
             </Typography>
-            <Typography fontSize='12px' color='white'>
+            <Typography fontSize='12px' sx={{mb:2}} color='white'>
               Your donation will be used to purchase practice props of varying sizes 
               to allow people of all ages to participate.
             </Typography>
-            <Button sx={{backgroundColor:'rgb(4, 215, 159)', p: 1, mt: 2, color:'black'}} href='https://www.patreon.com/flowartsdojo' rel='noreferrer' target="_blank" size="small">
-              Become a Patron
-            </Button>
+            <ThemeButton  href='https://www.patreon.com/flowartsdojo' rel='noreferrer' text='Become a Patron' target="_blank" size="small">
+              
+            </ThemeButton>
           </Grid>
 
 

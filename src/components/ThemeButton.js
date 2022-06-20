@@ -1,14 +1,25 @@
-import * as React from 'react';
-import {Button} from '@mui/material';
+import React from "react";
+import { makeStyles } from "@mui/styles";
+import {Button} from "@mui/material";
 
+const useStyles = makeStyles({
+  root: {
+    "&.MuiButton-root": {
+      backgroundColor:'rgb(4, 215, 159)', 
+      color: 'black',
+      padding: '4px 16px 4px 16px', 
+      borderRadius: '4px',
+      '&:hover': {
+        backgroundColor: 'lightblue',
+      },
+    },
+  }
+});
 
-
-function ThemeButton({text, action}) {
-
-  // TODO onClick
-
+function ThemeButton({text, link, action}){
+  const classes = useStyles();
   return (
-    <Button sx={{ backgroundColor:'rgb(4, 215, 159)', fontColor:'black', px: 4, color:'black'}} >
+    <Button href={link} target='_blank' className={classes.root} rel='noreferrer'>
       {text}
     </Button>
   );
