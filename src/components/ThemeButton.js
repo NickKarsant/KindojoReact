@@ -16,10 +16,10 @@ const useStyles = makeStyles({
   }
 });
 
-function ThemeButton({text, link, action, sx,}){
+function ThemeButton({text, link, target ='_blank', action, sx}){
   const classes = useStyles();
   return (
-    <Button href={link} target='_blank' className={classes.root} rel='noreferrer'>
+    <Button href={link} target={target} sx={{...sx}} className={classes.root} rel='noreferrer'>
       {text}
     </Button>
   );

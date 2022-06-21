@@ -43,7 +43,7 @@ return(
               Your donation will be used to purchase practice props of varying sizes 
               to allow people of all ages to participate.
             </Typography>
-            <ThemeButton  href='https://www.patreon.com/flowartsdojo' rel='noreferrer' text='Become a Patron' target="_blank" size="small">
+            <ThemeButton  link='https://www.patreon.com/flowartsdojo' rel='noreferrer' text='Become a Patron' target="_blank" size="small">
               
             </ThemeButton>
           </Grid>

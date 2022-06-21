@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Grid, Typography,TextField, Container, Link, Select, InputLabel, MenuItem, FormLabel, TextareaAutosize,   } from '@mui/material';
+import {Box, Grid, Typography, FormControl, TextField, Container, Link, Select, InputLabel, MenuItem, FormLabel, TextareaAutosize,   } from '@mui/material';
 import ThemeButton from '../components/ThemeButton'
 
 const light = {color:'white', background:'white'}
@@ -22,20 +22,24 @@ const Contact = () => {
           </Typography>
         </Grid>
       <form>
-      <Grid container  direction='column' sx={{display:'flex' }}>
+      <Grid container  direction='column' sx={{display:'flex'}}>
         <Grid item>
           <InputLabel sx={{color:'white'}}  variant='h1'>Name</InputLabel>
-          <TextField focused sx={{width:'50%', backgroundColor: 'white'}} placeholder='Name'  ></TextField>
+          <FormControl sx={{width:'100%'}}>
+            <TextField focused sx={{width:'50%', backgroundColor: 'white'}} placeholder='Name'  ></TextField>
+          </FormControl>
         </Grid>
         <Grid item sx={{py: 2}}>
           <InputLabel sx={{color:'white'}}>Email</InputLabel>
-          <TextField sx={{width:'50%', backgroundColor: 'white'}} placeholder='Email'></TextField>
+          <FormControl sx={{width:'100%'}}>
+            <TextField sx={{width:'50%', backgroundColor: 'white'}} placeholder='Email'></TextField>
+          </FormControl>
         </Grid>
         <Grid item sx={{pb: 2}}>
           <InputLabel sx={{color:'white'}}>Message</InputLabel>
-          <TextareaAutosize minRows={5} style={{maxWidth:500}} sx={{backgroundColor: 'white'}} placeholder="If you have any further questions about props, or which class might be right for you, please don't hesitate to ask.">
-
-          </TextareaAutosize>
+          <FormControl sx={{width: '50%'}}>
+            <TextareaAutosize sx={{backgroundColor: 'white'}} placeholder="If you have any further questions about props, or which class might be right for you, please don't hesitate to ask."/>
+          </FormControl>
         </Grid>
 
         <Grid item>

@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
-import {Box, Grid, Typography,TextField, Container, Link, Select, InputLabel, MenuItem, TextareaAutosize  } from '@mui/material';
+import {Box, Button, Card, Grid, FormControl, Typography,TextField, Container, Link, Select, InputLabel, MenuItem, TextareaAutosize  } from '@mui/material';
 import ThemeButton from '../ThemeButton'
-
-import 'react-calendar/dist/Calendar.css';
-// import 'react-clock/dist/Clock.css';
 import Picker from 'react-datetime-picker' 
 import Classes from '../../pages/classes';
 import { makeStyles } from "@mui/styles";
@@ -12,8 +9,11 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "white"
-  }
+    backgroundColor: "white",
+    height:'35px',
+    fontSize:'18px'
+  },
+
 });
 
 const Booking = (props) => {
@@ -44,100 +44,147 @@ const Booking = (props) => {
       </Grid>
 
       <form>
-      <Grid container spacing={2} direction='column' sx={{display:'flex', my: 2 }}>
+      <Card sx={{p: 2,backgroundColor:'rgb(233, 248, 244)'}}>
+        <Grid container sx={{display:'flex'}}>
+       
 
-        {/* NAME */}
-        <Grid item>
-          <InputLabel sx={{color:'white'}}>Name</InputLabel>
-          <TextField variant='outlined' sx={{borderRadius:'4px', backgroundColor:'white'}}></TextField>
-        </Grid>
-        {/* EMAIL */}
-        <Grid item>
-          <InputLabel sx={{color:'white'}}>Email</InputLabel>
-          <TextField variant='outlined' required sx={{backgroundColor:'white', borderRadius:'4px'}}></TextField>
-        </Grid>
-        {/* DATE */}
-        <Grid item>
-          <InputLabel sx={{color:'white'}} >Date and Time</InputLabel>
-          <Picker className={classes.root} onChange={onChange} value={value} required  />
-        </Grid>
-        {/* # STUDENTS */}
-        <Grid item>
-          <InputLabel sx={{color:'white'}} ># of Students</InputLabel>
-          <Select
-            variant='outlined'
-            value={numStudents}
-            sx={{backgroundColor:'white', minWidth: '100px'}}
-            onChange={handleChangeStudents}
-          >
-            <MenuItem sx={{color:'black'}} value='1'>1</MenuItem>
-            <MenuItem sx={{color:'black'}} value='2'>2</MenuItem>
-            <MenuItem sx={{color:'black'}} value='3'>3</MenuItem>
-            <MenuItem sx={{color:'black'}} value='4'>4</MenuItem>
-            <MenuItem sx={{color:'black'}} value='5'>5+</MenuItem>
+        <Grid container sx={{display:'flex', justifyContent:'space-between'}}>
+            {/* NAME */}
+            <Grid item sm={6} xs={12} sx={{py:1}}>
+              <InputLabel >Name</InputLabel>
+              <FormControl>
+                <TextField variant='outlined' sx={{borderRadius:'4px', backgroundColor:'white'}}/>
+              </FormControl>
+
+            </Grid>
+
+
+            {/* # STUDENTS */}
+            <Grid item sm={6} xs={12} sx={{alignItems:'flex-start'}}>
+
+              <InputLabel  ># of Students</InputLabel>
+                <FormControl sx={{backgroundColor:'white', width: '60%'}}>
+                  <Select
+                    variant='outlined'
+                    value={numStudents}
+                    // sx={{backgroundColor:'white', minWidth: '100px'}}
+                    sx={classes.smallerSelects}
+                    onChange={handleChangeStudents}
+                  >
+                    <MenuItem sx={{color:'black'}} value='1'>1</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='2'>2</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='3'>3</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='4'>4</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='5'>5+</MenuItem>
+                
+                  </Select>
+                </FormControl>
+            </Grid>
+          </Grid>
+
+
+
+
+
+
+          <Grid container sx={{display:'flex', justifyContent:'space-between'}}>
+            {/* EMAIL */}
+            <Grid item sm={6} xs={12} sx={{py:1}}>
+              <InputLabel >Email</InputLabel>
+              <TextField variant='outlined' required sx={{backgroundColor:'white', borderRadius:'4px'}}></TextField>
+            </Grid>
+            {/* CLASS */}
+            <Grid item sm={6} xs={12} sx={{alignItems:'flex-start', py:1}}>
+              <InputLabel  >Choose a Class</InputLabel>
+              <FormControl sx={{backgroundColor:'white', width: '60%'}}>
+                <Select
+                  required
+                  variant='outlined'
+                  value={lesson}
+                  sx={{backgroundColor:'white', minWidth: '100px'}}
+                  onChange={handleChange}
+                >
+                  <MenuItem sx={{color:'black'}} value='bodyFundamentals'>Body Fundamentals</MenuItem>
+                  <MenuItem sx={{color:'black'}} value='poi'>Poi</MenuItem>
+                  <MenuItem sx={{color:'black'}} value='ropeDart'>Rope Dart</MenuItem>
+                  <MenuItem sx={{color:'black'}} value='dragonStaff'>Dragon Staff</MenuItem>
+                  <MenuItem sx={{color:'black'}} value='contactStaff'>Contact Staff</MenuItem>
+                  <MenuItem sx={{color:'black'}} value='bullwhip'>Bullwhip</MenuItem>
+                  <MenuItem sx={{color:'black'}} value='nunchucks'>Nunchucks</MenuItem>
+                  {/* <MenuItem sx={{color:'black'}} value='firespinning'>Intro to fire spinning</MenuItem> */}
+                  <MenuItem sx={{color:'black'}} value='puppyhammer'>Puppyhammer</MenuItem>
+                </Select>
+              </FormControl>
+
+            </Grid>
+          </Grid>
+
+
+
+
+          <Grid container sx={{display:'flex', justifyContent:'space-between', py: 1}}>
+
+            {/* DATE */}
+            <Grid item sm={6} xs={12} sx={{py:1}}>
+                <InputLabel  >Date and Time</InputLabel>
+                <FormControl sx={{backgroundColor: "white", fontSize:'18px'}}>
+                  <Picker onChange={onChange} value={value} required  />
+                </FormControl>
+
+              </Grid>
+           
+
+            {/* LOCATION */}
+            <Grid item sm={6} xs={12} sx={{py:1}}>
+                <InputLabel >Select a Location</InputLabel>
+                <FormControl sx={{backgroundColor:'white', width: '60%'}}>
+                  <Select
+                    required
+                    variant='outlined'
+                    value={location}
+                    sx={{backgroundColor:'white', minWidth: '100px'}}
+                    onChange={handleChangeLocation}
+                  >
+                    <MenuItem sx={{color:'black'}} value='robinWilliamsMeadow'>GGP: Robin Williams Meadow</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='poloFields'>GGP: Polo Fields</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='poloFields'>GGP: Other</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='landsEnd'>Land's End Lookout</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='Dolores'>Dolores Park</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='alamoSquare'>Alamo Square Park</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='Kezar'>Kezar Stadium</MenuItem>
+                    <MenuItem sx={{color:'black'}} value='other'>Other</MenuItem>
+                  </Select>
+                  </FormControl>
+              </Grid>
+            </Grid>
+
+
+
+
+          <Grid item sm={6} xs={12}>
+
+            {/* NOTE */}
+            <Grid item>
+            <InputLabel>Note</InputLabel>
+              <TextareaAutosize style={{width: 300}} sx={{backgroundColor: 'white', borderRadius:'4px'}} placeholder="Want to book Intro to fire-spinning? Need to add details or specifics? Add a message here" />
+            </Grid>
+
+            <Grid container sx={{pt: 2, display:'flex', alignItems:'center', width:'auto', justifyContent:'space-between'}}>
+              <Grid item>
+                <Button sx={{border:'2px solid rgb(4, 215, 159)', px:'16px', py: '2px'}} type='reset'>Cancel</Button>
+              </Grid>
+              <Grid item>
+                <ThemeButton text='Book a Class' type='submit'/>
+              </Grid>
+            </Grid>
+          </Grid>
+
+
         
-          </Select>
         </Grid>
 
-        {/* CLASS */}
-        <Grid item>
-          <InputLabel sx={{color:'white'}} >Choose a Class</InputLabel>
-          <Select
-            required
-            variant='outlined'
-            value={lesson}
-            sx={{backgroundColor:'white', minWidth: '100px'}}
-            onChange={handleChange}
-          >
-            <MenuItem sx={{color:'black'}} value='bodyFundamentals'>Body Fundamentals</MenuItem>
-            <MenuItem sx={{color:'black'}} value='poi'>Poi</MenuItem>
-            <MenuItem sx={{color:'black'}} value='ropeDart'>Rope Dart</MenuItem>
-            <MenuItem sx={{color:'black'}} value='dragonStaff'>Dragon Staff</MenuItem>
-            <MenuItem sx={{color:'black'}} value='contactStaff'>Contact Staff</MenuItem>
-            <MenuItem sx={{color:'black'}} value='bullwhip'>Bullwhip</MenuItem>
-            <MenuItem sx={{color:'black'}} value='nunchucks'>Nunchucks</MenuItem>
-            {/* <MenuItem sx={{color:'black'}} value='firespinning'>Intro to fire spinning</MenuItem> */}
-            <MenuItem sx={{color:'black'}} value='puppyhammer'>Puppyhammer</MenuItem>
-          </Select>
-        </Grid>
-            <Typography color='white' sx={{width:'50%', pl: 2}} variant='caption'>
-            To book the Intro to Fire Spinning class, please contact the instructor
-          </Typography>
 
-
-        {/* LOCATION */}
-        <Grid item>
-          <InputLabel sx={{color:'white'}} >Select a Location</InputLabel>
-          <Select
-            required
-            variant='outlined'
-            value={location}
-            sx={{backgroundColor:'white', minWidth: '100px'}}
-            onChange={handleChangeLocation}
-          >
-            <MenuItem sx={{color:'black'}} value='robinWilliamsMeadow'>GGP: Robin Williams Meadow</MenuItem>
-            <MenuItem sx={{color:'black'}} value='poloFields'>GGP: Polo Fields</MenuItem>
-            <MenuItem sx={{color:'black'}} value='poloFields'>GGP: Other</MenuItem>
-            <MenuItem sx={{color:'black'}} value='landsEnd'>Land's End Lookout</MenuItem>
-            <MenuItem sx={{color:'black'}} value='Dolores'>Dolores Park</MenuItem>
-            <MenuItem sx={{color:'black'}} value='alamoSquare'>Alamo Square Park</MenuItem>
-            <MenuItem sx={{color:'black'}} value='Kezar'>Kezar Stadium</MenuItem>
-            <MenuItem sx={{color:'black'}} value='other'>Other</MenuItem>
-          </Select>
-        </Grid>
-
-        
-        {/* NOTE */}
-        <Grid item>
-        <InputLabel sx={{color:'white'}}>Note</InputLabel>
-          <TextareaAutosize style={{width: 300}} sx={{backgroundColor: 'white', borderRadius:'4px'}} placeholder="Need to add details or specifics for which this form doesn't account? Add them here." />
-        </Grid>
-
-        <Grid item>
-          <ThemeButton text='Book a Class' type='submit'/>
-        </Grid>
-
-      </Grid>
+      </Card>
       </form>
   
 
