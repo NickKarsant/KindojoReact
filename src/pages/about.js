@@ -12,10 +12,10 @@ const About = () => {
   return (
     <Container>
     <Grid sx={{py:1}}>
-      <Typography variant='h4' color='white'>
+      <Typography variant='h4' sx={{pb:0}} color='white'>
         Nicholas Karsant
       </Typography>
-      <Grid container sx={{display:'flex', py:4, alignItems:'flex-start'}}>
+      <Grid container sx={{display:'flex', py:2, alignItems:'flex-start'}}>
         <Grid item xs={12} sm={6} xl={5} sx={{p:1}}>
           <Typography paragraph sx={{lineHeight:'2'}} color='white'>
             Nick's passion for the flow arts began one day, six years ago, when he observed the beauty
@@ -50,7 +50,7 @@ const About = () => {
       <Typography sx={{lineHeight:'2', p: 1}} color='white'>
       Flow is a mental state where a person is entirely immersed in the activity; where one's skills are in balance
 			with the
-			challenges that arise. Click <a href="https://en.wikipedia.org/wiki/Flow_(psychology)" target="_blank">here</a> to read a more comprehensive definition of flow.
+			challenges that arise. Click <a href="https://en.wikipedia.org/wiki/Flow_(psychology)" style={{'color':'lightblue'}} target="_blank">here</a> to read a more comprehensive definition of flow.
       </Typography>
     </Grid>
 
@@ -59,7 +59,7 @@ const About = () => {
         What is Flow Arts?
       </Typography>
       <Typography sx={{lineHeight:'2', p: 1}} color='white'>
-      From <a href="http://fundtheflowarts.org/the-flow-arts/" target="_ blank">fundtheflowarts.org</a>:
+      From <a href="http://fundtheflowarts.org/the-flow-arts/" style={{'color':'lightblue'}} target="_ blank">fundtheflowarts.org</a>:
 			" 'Flow Arts' has become an overarching term for the emerging movement-based artforms that integrate
 			dance and creative exploration of movement with skill-based prop manipulation. The Flow Arts draw
 			from a multitude of ancient and modern movement disciplines from taichi and Maori poi spinning, to

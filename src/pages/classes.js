@@ -98,7 +98,7 @@ const Classes = () => {
           </Grid>
         <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
           <Grid item>
-            <ThemeButton text='Book a Class' />
+            <ThemeButton text='Book a Class' link='/booking' />
           </Grid>
         </Grid>
       </Grid>
@@ -128,6 +128,12 @@ const Classes = () => {
           <List>
             {advancedClasses}
           </List>
+        </Grid>
+
+        <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
+          <Grid item>
+            <ThemeButton sx={{p:5, mt: 3}} text='Book a Class' link='/booking' />
+          </Grid>
         </Grid>
 
 
