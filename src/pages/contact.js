@@ -1,17 +1,15 @@
-import React, {useState} from 'react';
-import {Box, Grid, Typography, FormControl, TextField, Container, Link, Select, InputLabel, MenuItem, FormLabel, TextareaAutosize,   } from '@mui/material';
+import React, { useState } from 'react';
+import {Grid, Typography, FormControl, TextField, Container, InputLabel, TextareaAutosize } from '@mui/material';
 import ThemeButton from '../components/ThemeButton'
 
-const light = {color:'white', background:'white'}
 
 const Contact = () => {
-  const [lesson, setLesson] = useState('');
 
-  const handleChange = (event) => {
-    console.log(event.target.value)
-    setLesson(event.target.value);
+  const [messageText, setMessageText] = useState('')
+
+  const handleMessageChange = (event) => {
+    setMessageText(event.target.value);
   };
-
   
   return (
     <Container>
@@ -24,7 +22,7 @@ const Contact = () => {
       <form>
       <Grid container  direction='column' sx={{display:'flex'}}>
         <Grid item>
-          <InputLabel sx={{color:'white'}}  variant='h1'>Name</InputLabel>
+          <InputLabel sx={{color:'white'}}>Name</InputLabel>
           <FormControl sx={{width:'100%'}}>
             <TextField focused sx={{width:'50%', backgroundColor: 'white'}} placeholder='Name'  ></TextField>
           </FormControl>
@@ -37,8 +35,8 @@ const Contact = () => {
         </Grid>
         <Grid item sx={{pb: 2}}>
           <InputLabel sx={{color:'white'}}>Message</InputLabel>
-          <FormControl sx={{width: '50%'}}>
-            <TextareaAutosize sx={{backgroundColor: 'white'}} placeholder="If you have any further questions about props, or which class might be right for you, please don't hesitate to ask."/>
+          <FormControl sx={{width:'50%'}}>
+            <TextareaAutosize minRows={5} onInput={(e) => handleMessageChange(e)} value={messageText} sx={{backgroundColor: 'white'}} placeholder="If you have any further questions about props, or which class might be right for you, please don't hesitate to ask."/>
           </FormControl>
         </Grid>
 

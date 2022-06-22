@@ -1,28 +1,31 @@
 import React, {useState} from 'react';
-import {Box, Button, Card, Grid, FormControl, Typography,TextField, Container, Link, Select, InputLabel, MenuItem, TextareaAutosize  } from '@mui/material';
+import {Button, Card, Grid, FormControl, Typography,TextField, Container, Link, Select, InputLabel, MenuItem, TextareaAutosize  } from '@mui/material';
 import ThemeButton from '../ThemeButton'
 import Picker from 'react-datetime-picker' 
-import Classes from '../../pages/classes';
-import { makeStyles } from "@mui/styles";
+import { css } from '@emotion/react';
 
 
 
-const useStyles = makeStyles({
-  root: {
-    backgroundColor: "white",
-    height:'35px',
-    fontSize:'18px'
-  },
 
-});
+// const useStyles = makeStyles({
+//   root: {
+//     backgroundColor: "white",
+//     height:'35px',
+//     fontSize:'18px'
+//   },
+
+// });
 
 const Booking = (props) => {
-  const classes = useStyles();
   const [lesson, setLesson] = useState('');
   const [numStudents, setNumStudents] = useState(0);
   const [location, setLocation] = useState('');
   const [value, onChange] = useState(new Date());
+  const [messageText, setMessageText] = useState('')
 
+  const handleMessageChange = (event) => {
+    setMessageText(event.target.value);
+  };
 
   const handleChange = (event) => {
     setLesson(event.target.value);
@@ -52,7 +55,7 @@ const Booking = (props) => {
             {/* NAME */}
             <Grid item sm={6} xs={12} sx={{py:1}}>
               <InputLabel >Name</InputLabel>
-              <FormControl>
+              <FormControl sx={{width:'60%'}}>
                 <TextField variant='outlined' sx={{borderRadius:'4px', backgroundColor:'white'}}/>
               </FormControl>
 
@@ -68,7 +71,6 @@ const Booking = (props) => {
                     variant='outlined'
                     value={numStudents}
                     // sx={{backgroundColor:'white', minWidth: '100px'}}
-                    sx={classes.smallerSelects}
                     onChange={handleChangeStudents}
                   >
                     <MenuItem sx={{color:'black'}} value='1'>1</MenuItem>
@@ -91,7 +93,9 @@ const Booking = (props) => {
             {/* EMAIL */}
             <Grid item sm={6} xs={12} sx={{py:1}}>
               <InputLabel >Email</InputLabel>
-              <TextField variant='outlined' required sx={{backgroundColor:'white', borderRadius:'4px'}}></TextField>
+              <FormControl sx={{width:'60%'}}>
+                <TextField variant='outlined' required sx={{backgroundColor:'white', borderRadius:'4px'}}></TextField>
+              </FormControl>
             </Grid>
             {/* CLASS */}
             <Grid item sm={6} xs={12} sx={{alignItems:'flex-start', py:1}}>
@@ -166,7 +170,8 @@ const Booking = (props) => {
             {/* NOTE */}
             <Grid item>
             <InputLabel>Note</InputLabel>
-              <TextareaAutosize style={{width: 300}} sx={{backgroundColor: 'white', borderRadius:'4px'}} placeholder="Want to book Intro to fire-spinning? Need to add details or specifics? Add a message here" />
+              <TextareaAutosize style={{width: 300}} sx={{backgroundColor: 'white', borderRadius:'4px'}} placeholder="Want to book Intro to fire-spinning? Need to add details or specifics? Add a message here"
+              onInput={(e) => handleMessageChange(e)} value={messageText} />
             </Grid>
 
             <Grid container sx={{pt: 2, display:'flex', alignItems:'center', width:'auto', justifyContent:'space-between'}}>

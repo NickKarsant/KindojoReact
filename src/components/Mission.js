@@ -35,7 +35,7 @@ function Mission() {
           <Typography sx={{my: 5}}>
           Help support a students' learning by donating to KinDōjō. Your donation will be used to purchase practice props of varying sizes to allow people of all ages to participate.
           </Typography>
-          <ThemeButton text="Donate" />
+          <ThemeButton text="Donate" link='https://www.patreon.com/flowartsdojo' />
         </Grid>
 
         <Grid item xs={5} sx={{display: 'flex', justifyContent:'center'}}>

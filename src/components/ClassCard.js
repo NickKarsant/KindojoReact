@@ -1,18 +1,42 @@
 import React from 'react'
 import {Card, Grid, Link, CardActions, CardContent,CardMedia,Typography} from '@mui/material';
 import ThemeButton from '../components/ThemeButton'
-
-
+import PopupBox from './popUpBox'
 
 
 const ClassCard = ({lesson, image}) => {
 
   let buttons;
   if (typeof lesson.videoLink === 'string') {
-    buttons = <ThemeButton text='See this prop in action!' link={lesson.videoLink} />
+    // buttons = <ThemeButton className="iframe-lightbox-link" text='See this prop in action!' link={lesson.videoLink} />
+    let url = lesson.videoLink.replace('watch?v=', "embed/")
+    // let url = lesson.videoLink
+  const video = <iframe src={url}  
+     frameborder="0" style={{overflow:'hidden',overflowX:'hidden',
+     overflowY:'hidden',
+     height:'100%',
+     width:'100%',
+     position:'absolute',
+     top:'0px',
+     left:'0px',
+     right:'0px',
+     bottom:'0px',
+     height:"100%", width:"100%"}} />
+  // buttons = video
+
+ buttons =  <PopupBox content={video} />
+
+
+
+
   } else if (typeof lesson.videoLink === 'object' &&  lesson.videoLink !== null) {
-    buttons = [<ThemeButton text='See this prop fight!' key={0} link={lesson.videoLink[0]} />,
+    buttons = [<ThemeButton className="iframe-lightbox-link" text='See this prop fight!' key={0} link={lesson.videoLink[0]} />,
     <ThemeButton text='See this prop dance!' key={1} link={lesson.videoLink[1]} />
+    ]
+
+    buttons=[
+      <PopupBox  text='see this prop fight!' content={lesson.videoLink[0]} />,
+      <PopupBox text='see this prop dance!' content={lesson.videoLink[1]} />
     ]
   } 
 
@@ -27,7 +51,7 @@ const ClassCard = ({lesson, image}) => {
   } else if (lesson.title === 'Dragon Staff') {
     description = (
       <>
-        <span> {lesson.description.slice(0,70)}</span><Link sx={{color:'lightblue'}} class="link" rel='noreferrer' href="https://www.youtube.com/watch?v=Pa6lb2AEf-I&ab_channel=NathanRae" target="_blank">fei-cha</Link><span> {lesson.description.slice(70)}</span>
+        <span> {lesson.description.slice(0,70)}</span><Link sx={{color:'lightblue'}} className="link" rel='noreferrer' href="https://www.youtube.com/watch?v=Pa6lb2AEf-I&ab_channel=NathanRae" target="_blank">fei-cha</Link><span> {lesson.description.slice(70)}</span>
 
       </>
     )
