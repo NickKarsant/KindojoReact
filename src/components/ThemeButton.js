@@ -2,7 +2,7 @@ import React from "react";
 import {Button} from "@mui/material";
 
 
-function ThemeButton({text,onClick, target='_blank', link, sx}){
+function ThemeButton({text,onClick, target='_blank', link, type, sx}){
   return (
     <Button href={link} onClick={onClick}  sx={{...sx, 
     ":hover": {
@@ -12,7 +12,7 @@ function ThemeButton({text,onClick, target='_blank', link, sx}){
       color: 'black',
       padding: '4px 16px 4px 16px', 
       borderRadius: '4px',
-      }} rel='noreferrer' target={target}>
+      }} rel='noreferrer' type={type} target={target}>
       {text}
     </Button>
   );

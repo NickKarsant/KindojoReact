@@ -36,7 +36,7 @@ const classData = { beginnerClasses: [
 
 advancedClasses:[
   {
-    id: 5, prerequisites: null,title:'Bullwhip', privatePrice: 40, groupPrice: 20, description: 'There are a number of variations of whips designed with different purposes in mind. These classes center around bullwhip techniques (think Catwoman or Indiana Jones) and will demystify this loud, fear-inducing soft-prop incorporating smooth movements and transitions between cracks.', imageAlt:'blue coiled whip', videoLink: 'https://youtu.be/MdWAc0Cofpc?t=55'
+    id: 5, prerequisites: null,title:'Bullwhip', privatePrice: 40, groupPrice: 20, description: 'There are a number of variations of whips designed with different purposes in mind. These classes center around bullwhip techniques (think Catwoman or Indiana Jones) and will demystify this loud, fear-inducing soft-prop incorporating smooth movements and transitions between cracks.', imageAlt:'blue coiled whip', videoLink: 'https://www.youtube.com/watch?v=t34PZy8JwDM'
   },
   {
     id: 6, prerequisites:'Competency with poi' ,title:'Nunchucks', privatePrice: 40, groupPrice: 20, description: 
@@ -112,12 +112,12 @@ const Classes = () => {
       <Grid container sx={{borderBottom: '2px solid white', py: 4 }}>
         <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
           <Grid item>
-            <Typography color='white' variant='h2'>
+            <Typography color='white' variant='h3'>
               Advanced Classes
             </Typography>
           </Grid>
           <Grid item>
-            <Typography color='white' sx={{px:10, textAlign: 'center'}} variant='h5'>
+            <Typography color='white' sx={{display:'flex', textAlign: 'center'}} variant='caption'>
             Certain skills are required to take an advanced class. Please speak with the instructor to see if you qualify.
             </Typography>
           </Grid>

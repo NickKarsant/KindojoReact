@@ -7,7 +7,7 @@ import About from './pages/about'
 import Contact from './pages/contact'
 import Footer from './components/footer'
 import Route from './components/Route'
-import { Box } from '@mui/material';
+import { Container } from '@mui/material';
 
 
 
@@ -23,7 +23,7 @@ function App() {
   return (<>
 
     <Nav/>
-    <Box sx={{height: 'auto', width:'100%', py: 6,  backgroundColor: '#212121'}}>
+    <Container sx={{py: 4,  backgroundColor: '#212121'}}>
 
 
       <Route path='/'>
@@ -46,7 +46,7 @@ function App() {
         <Booking />
       </Route>
 
-    </Box>
+    </Container>
     <Footer/>
   </>
   );

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ThemeButton from '../components/ThemeButton'
-import {Button} from '@mui/material';
 import FsLightbox from 'fslightbox-react';
 
 
@@ -12,11 +11,11 @@ const PopupBox = ({content, text='see this prop in action!'}) => {
 
   return (
     <>
-    <ThemeButton text={text} onClick={ () => setToggler(!toggler) } />
-    <FsLightbox
-    toggler={toggler}
-    sources={[content]}
-    />
+      <ThemeButton text={text} onClick={ () => setToggler(!toggler) } />
+      <FsLightbox
+      toggler={toggler}
+      sources={[content]}
+      />
     </>
     );
  

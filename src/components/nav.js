@@ -1,6 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import {Box, Grid, Link, Stack} from '@mui/material';
+import {Box, Grid, Link} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import logo from '../logos/logowithflame.jpg'
 import NavLink from './NavLink'
