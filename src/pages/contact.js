@@ -51,7 +51,7 @@ const Contact = () => {
 
 
   return (
-    <Container sx={{border: '1px solid red'}} >
+    <Container>
 
         <Grid container item sx={{p:0,m:0,color: 'white', display:'flex', justifyContent: 'center'}}>
           <Typography variant='h4'>
