@@ -37,10 +37,10 @@ function App() {
       <Route path='/about'>
         <About />
       </Route>
-
+{/* 
       <Route path='/contact'>
         <Contact />
-      </Route>
+      </Route> */}
 
       <Route path='/booking'>
         <Booking />
