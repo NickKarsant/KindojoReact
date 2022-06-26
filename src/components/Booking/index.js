@@ -66,7 +66,7 @@ const Booking = (props) => {
       }
     })
  
-    // resetForm();
+    resetForm();
 
   };
 
