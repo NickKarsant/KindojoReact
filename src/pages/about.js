@@ -15,6 +15,9 @@ const About = () => {
       <Typography variant='h4' sx={{pb:0}} color='white'>
         Nicholas Karsant
       </Typography>
+      <Typography variant='h6' fontStyle='italic' sx={{pb:0}} color='white'>
+       Instructor
+      </Typography>
       <Grid container sx={{display:'flex', py:2, alignItems:'flex-start'}}>
         <Grid item xs={12} sm={6} xl={5} sx={{p:1}}>
           <Typography paragraph sx={{lineHeight:'2'}} color='white'>

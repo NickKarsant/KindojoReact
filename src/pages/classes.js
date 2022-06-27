@@ -132,7 +132,7 @@ const Classes = () => {
 
         <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
           <Grid item>
-            <ThemeButton sx={{p:5, mt: 3}} text='Book a Class' target='' link='/booking' />
+            <ThemeButton sx={{p:3, mt: 5}} text='Book a Class' target='' link='/booking' />
           </Grid>
         </Grid>
 
