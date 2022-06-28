@@ -85,7 +85,7 @@ const Contact = () => {
             </Grid>
             <Grid container item sx={{width:'100%', display:'flex', justifyContent:'space-around'}}>
             <Grid item>
-              <Button sx={{border:'2px solid rgb(4, 215, 159)', px:'16px', py: '2px', color: 'black', backgroundColor:'rgb(233, 248, 244)', '&:hover': {backgroundColor:'RGB(194, 195, 255)'} }} 
+              <Button sx={{border:'2px solid rgb(4, 215, 159)', px:'16px', py: '2px', color: 'black', backgroundColor:'#D9EDDF', '&:hover': {backgroundColor:'#A88FFF'} }} 
               onClick={resetForm}
                type='reset'>Cancel</Button>
             </Grid>

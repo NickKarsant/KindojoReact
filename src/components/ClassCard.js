@@ -2,15 +2,14 @@ import React from 'react'
 import {Card, Grid, Link, CardActions, CardContent,CardMedia,Typography} from '@mui/material';
 import ThemeButton from '../components/ThemeButton'
 import PopupBox from './popUpBox'
+import { ChunkyUnderline } from '../components/ChunkyUnderline'
 
 
 const ClassCard = ({lesson, image}) => {
 
   let buttons;
   if (typeof lesson.videoLink === 'string') {
-    // buttons = <ThemeButton className="iframe-lightbox-link" text='See this prop in action!' link={lesson.videoLink} />
     let url = lesson.videoLink.replace('watch?v=', "embed/")
-    // let url = lesson.videoLink
   const video = <iframe src={url}  
      frameborder="0" style={{overflow:'hidden',overflowX:'hidden',
      overflowY:'hidden',
@@ -78,7 +77,9 @@ let body;
       <CardContent sx={{pb: 0}}>
   
       <Typography color='white' variant="h4" component="div">
-        {lesson.title}
+        <ChunkyUnderline>
+          {lesson.title}
+        </ChunkyUnderline>
       </Typography>
       {lesson.privatePrice &&
       <Typography color='white' variant="body2">
@@ -112,7 +113,9 @@ let body;
         <CardContent sx={{pb: 0}}>
     
         <Typography color='white' variant="h4" component="div">
-          {lesson.title}
+          <ChunkyUnderline>
+            {lesson.title}
+          </ChunkyUnderline>
         </Typography>
         {lesson.privatePrice &&
         <Typography color='white' variant="body2">

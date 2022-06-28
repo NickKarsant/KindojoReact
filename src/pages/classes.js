@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, Grid,List, ListItem, Typography, Container, Link } from '@mui/material';
+import { Grid, List, ListItem, Typography } from '@mui/material';
 import ClassCard from '../components/ClassCard'
 import ThemeButton from '../components/ThemeButton'
 import cartwheel from '../images/cartwheel.png'
@@ -7,12 +7,12 @@ import poi from '../images/poi.jpg'
 import ropedart from '../images/ropedart.jpg'
 import dragon from '../images/dragonstaff.jpg'
 import contact from '../images/contactstaff copy.jpg'
-
 import whip from '../images/whip copy.jpg'
 import nunchuck from '../images/nunchuck.jpg'
 import firespinning from '../images/firespinning.jpg'
 import puppyhammer from '../images/puppyhammer.jpg'
 import cyr from '../images/cyr_twinpeaks.jpg'
+import {ChunkyUnderline} from '../components/ChunkyUnderline'
 
 const classData = { beginnerClasses: [
   {id: 0, prerequisites: null ,title: 'Body Fundamentals', privatePrice: 30, groupPrice: 15, description: 'Aimed toward absolute beginners, this class will explore the capabilities of the human body, providing a variety of exercises to improve strength, flexibility, coordination, range of motion, and agility. Goals for this class are cartwheels and rudimentary handstands.', imageAlt:'cartwheeling silhoutte against a sunset', videoLink: null},
@@ -85,18 +85,22 @@ const Classes = () => {
       </ListItem>
     )
   })
+
   
   return (
     <>
-      <Grid container sx={{borderBottom: '2px solid white', pb: 6}}>
+      <Grid container sx={{borderBottom: '2px solid white'}}>
         <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
           <Grid item>
-            <Typography color='white' variant='h2'>
-              Classes
-            </Typography>
+            <Typography color='white'variant='h2'>
+              <ChunkyUnderline>
+                  Classes
+
+              </ChunkyUnderline>
+            </Typography> 
             </Grid>
           </Grid>
-        <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
+        <Grid container sx={{py: 4, display: 'flex', alignItems:'center', justifyContent:'center'}}>
           <Grid item>
             <ThemeButton target="" text='Book a Class' link='/booking' />
           </Grid>
@@ -110,18 +114,19 @@ const Classes = () => {
       </Grid>
 
       <Grid container sx={{borderBottom: '2px solid white', py: 4 }}>
-        <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
+        <Grid container sx={{display: 'flex', justifyContent:'center'}}>
           <Grid item>
             <Typography color='white' variant='h3'>
               Advanced Classes
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography color='white' sx={{display:'flex', textAlign: 'center'}} variant='caption'>
+        </Grid>
+
+        <Grid container sx={{display: 'flex', justifyContent:'center'}}>
+            <Typography color='white' sx={{fontStyle:'italic', display:'flex', textAlign: 'center'}} variant='caption'>
             Certain skills are required to take an advanced class. Please speak with the instructor to see if you qualify.
             </Typography>
           </Grid>
-        </Grid>
       </Grid>
 
         <Grid container>
