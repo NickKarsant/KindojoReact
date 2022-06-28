@@ -8,7 +8,7 @@ import Mission from '../components/Mission'
 const Home = () => {
 return (
 <>
-  {/* <HeroCard /> */}
+  <HeroCard />
   <Box sx={{ backgroundColor:'rgb(233, 248, 244)',}}>
     <Mission />
   </Box>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, Grid, Typography} from '@mui/material';
+import {Grid, Typography} from '@mui/material';
 import longExposureImage from '../images/longexposure copy.png'
 import ThemeButton from './ThemeButton';
 
@@ -15,7 +15,7 @@ function Mission() {
           Our Mission
         </Typography>
       </Grid>
-      <Grid item sx={{mx: 10}} >
+      <Grid item sx={{mx: 5}} >
         <Typography paragraph>
         The San Francisco Bay Area is home to one of the largest and most talented communities of fire-dancers and flow artists. KinDōjō aims to help expand this community of specialized artists to further include people from all walks of life, and make flow arts a hobby as well-known as any after-school sport.
         </Typography>
@@ -25,9 +25,8 @@ function Mission() {
       </Grid>
     </Grid>
 
-  <Box sx={{backgroundColor:'white', mt: 0, py: 4, width: '100%'}}>
-    <Grid container sx={{display:'flex', alignItems:'flex-start', justifyContent:'center'}}>
-    
+    <Grid container sx={{display:'flex', alignItems:'flex-start', justifyContent:'center', backgroundColor:'white', mt: 0, py: 4, width: '100%'}}>
+    {/* breakpoint needs shifting for mobile */}
         <Grid item xs={5}>
           <Typography component='h5' variant='h5'>
             Donate to the Flow Arts
@@ -41,12 +40,7 @@ function Mission() {
         <Grid item xs={5} sx={{display: 'flex', justifyContent:'center'}}>
           <img alt='long exposure of fire poi spinner' style={{maxWidth:'300px', maxHeight: '300px', width:'auto', height:'auto'}} src={longExposureImage} />
         </Grid>
-  
-
-
-
     </Grid>
-  </Box>
     </>
   );
 }

@@ -12,7 +12,6 @@ import nunchuck from '../images/nunchuck.jpg'
 import firespinning from '../images/firespinning.jpg'
 import puppyhammer from '../images/puppyhammer.jpg'
 import cyr from '../images/cyr_twinpeaks.jpg'
-import {ChunkyUnderline} from '../components/ChunkyUnderline'
 
 const classData = { beginnerClasses: [
   {id: 0, prerequisites: null ,title: 'Body Fundamentals', privatePrice: 30, groupPrice: 15, description: 'Aimed toward absolute beginners, this class will explore the capabilities of the human body, providing a variety of exercises to improve strength, flexibility, coordination, range of motion, and agility. Goals for this class are cartwheels and rudimentary handstands.', imageAlt:'cartwheeling silhoutte against a sunset', videoLink: null},
@@ -63,17 +62,14 @@ advancedClasses:[
 }
 
 
-
 const images = [cartwheel, poi, ropedart, dragon, contact, whip, nunchuck, firespinning, puppyhammer, cyr]
-
-
 
 
 const Classes = () => {
   const beginnerClasses = classData.beginnerClasses.map((lesson) => {
     return (
       <ListItem key={lesson.id}>
-        <ClassCard image={images[lesson.id]} lesson={lesson} />
+        <ClassCard key={lesson.id} image={images[lesson.id]} lesson={lesson} />
       </ListItem>
     )
   })
@@ -81,7 +77,7 @@ const Classes = () => {
   const advancedClasses = classData.advancedClasses.map((lesson) => {
     return (
       <ListItem key={lesson.id}> 
-        <ClassCard image={images[lesson.id]}  lesson={lesson} />
+        <ClassCard key={lesson.id} image={images[lesson.id]}  lesson={lesson} />
       </ListItem>
     )
   })
@@ -112,15 +108,15 @@ const Classes = () => {
 
       <Grid container sx={{borderBottom: '2px solid white', py: 4 }}>
         <Grid container sx={{display: 'flex', justifyContent:'center'}}>
-          <Grid item>
-            <Typography color='white' variant='h3'>
+          <Grid item >
+            <Typography color='white' sx={{px:6}} variant='h3'>
               Advanced Classes
             </Typography>
           </Grid>
         </Grid>
 
         <Grid container sx={{display: 'flex', justifyContent:'center'}}>
-            <Typography color='white' sx={{fontStyle:'italic', display:'flex', textAlign: 'center'}} variant='caption'>
+            <Typography color='white' sx={{fontStyle:'italic', px:2, display:'flex', textAlign: 'center'}} variant='caption'>
             Certain skills are required to take an advanced class. Please speak with the instructor to see if you qualify.
             </Typography>
           </Grid>

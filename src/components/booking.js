@@ -95,8 +95,8 @@ const Booking = (props) => {
 
         
       <form id='bookingForm' onSubmit={handleSubmit(onSubmit)} >
-        <FormGroup>
-          <Card sx={{p: 2,backgroundColor:'rgb(233, 248, 244)'}}>
+        <FormGroup sx={{width:'inherit'}}>
+          <Card sx={{p: 2, width:'inherit', backgroundColor:'rgb(233, 248, 244)'}}>
             <Grid container sx={{display:'flex'}}>
           
 

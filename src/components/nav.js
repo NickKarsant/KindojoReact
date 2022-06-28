@@ -56,7 +56,7 @@ var styles = {
   bmOverlay: {
     position:'absolute',
     width:'100%',
-    height: '95vh',
+    height: '100vh',
     right: '0px',
     top: '0px',
     background: 'rgba(0, 0, 0, 0.6)'

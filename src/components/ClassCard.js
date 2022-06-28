@@ -11,7 +11,7 @@ const ClassCard = ({lesson, image}) => {
   if (typeof lesson.videoLink === 'string') {
     let url = lesson.videoLink.replace('watch?v=', "embed/")
   const video = <iframe src={url}  
-     frameborder="0" style={{overflow:'hidden',overflowX:'hidden',
+     frameBorder="0" style={{overflow:'hidden',overflowX:'hidden',
      overflowY:'hidden',
      height:'100%',
      width:'100%',
@@ -19,11 +19,11 @@ const ClassCard = ({lesson, image}) => {
      top:'0px',
      left:'0px',
      right:'0px',
-     bottom:'0px',
-     height:"100%", width:"100%"}} />
+     bottom:'0px'
+     }} />
   // buttons = video
-
- buttons =  <PopupBox content={video} />
+  
+  buttons =  <PopupBox content={video} />
 
 
 
@@ -34,8 +34,8 @@ const ClassCard = ({lesson, image}) => {
     ]
 
     buttons=[
-      <PopupBox  text='see this prop fight!' content={lesson.videoLink[0]} />,
-      <PopupBox text='see this prop dance!' content={lesson.videoLink[1]} />
+      <PopupBox key={0} text='see this prop fight!' content={lesson.videoLink[0]} />,
+      <PopupBox key={1} text='see this prop dance!' content={lesson.videoLink[1]} />
     ]
   } 
 
@@ -59,6 +59,8 @@ const ClassCard = ({lesson, image}) => {
   }
 
 
+
+  // breakpoint class descriptions need resizing for mobile
 let body;
 // flip flop pictures
   if (lesson.id % 2 === 0){
@@ -76,31 +78,31 @@ let body;
     <Grid item xs={8}>
       <CardContent sx={{pb: 0}}>
   
-      <Typography color='white' variant="h4" component="div">
-        <ChunkyUnderline>
-          {lesson.title}
-        </ChunkyUnderline>
-      </Typography>
-      {lesson.privatePrice &&
-      <Typography color='white' variant="body2">
-      Private/Semi-private:${lesson.privatePrice}/person/hour
-      </Typography>}
-      {lesson.groupPrice &&
-      <Typography color='white' variant="body2">
-        Groups of 5+: ${lesson.groupPrice}/person/hour
-      </Typography>}
-      {lesson.prerequisites &&
-      <Typography color='white' variant="body2">
-        Prerequisites: {lesson.prerequisites}
-      </Typography>}
+        <Typography color='white' fontSize='4vw' variant="h4" component="div">
+          <ChunkyUnderline>
+            {lesson.title}
+          </ChunkyUnderline>
+        </Typography>
+        {lesson.privatePrice &&
+        <Typography color='white' fontSize='2.5vw' variant="body2">
+        Private/Semi-private:${lesson.privatePrice}/person/hour
+        </Typography>}
+        {lesson.groupPrice &&
+        <Typography color='white' fontSize='2.5vw' variant="body2">
+          Groups of 5+: ${lesson.groupPrice}/person/hour
+        </Typography>}
+        {lesson.prerequisites &&
+        <Typography color='white' fontSize='2.5vw' variant="body2">
+          Prerequisites: {lesson.prerequisites}
+        </Typography>}
 
       </CardContent>
       <CardContent>
-        <Typography color='white' variant="body1">
+        <Typography color='white' fontSize='2.5vw' variant="body1">
           {description}
         </Typography>
       </CardContent>
-    <CardActions sx={{pl: 2}}>
+    <CardActions sx={{pl: 2, width: '100%'}}>
       {buttons}
     </CardActions>
     </Grid>
@@ -112,31 +114,31 @@ let body;
       <Grid item xs={8}>
         <CardContent sx={{pb: 0}}>
     
-        <Typography color='white' variant="h4" component="div">
+        <Typography color='white' fontSize='2.5vw' variant="h4" component="div">
           <ChunkyUnderline>
             {lesson.title}
           </ChunkyUnderline>
         </Typography>
         {lesson.privatePrice &&
-        <Typography color='white' variant="body2">
+        <Typography color='white' fontSize='2.5vw' variant="body2">
         Private/Semi-private:${lesson.privatePrice}/person/hour
         </Typography>}
         {lesson.groupPrice &&
-        <Typography color='white' variant="body2">
+        <Typography color='white' fontSize='2.5vw' variant="body2">
           Groups of 5+: ${lesson.groupPrice}/person/hour
         </Typography>}
         {lesson.prerequisites &&
-        <Typography color='white' variant="body2">
+        <Typography color='white' fontSize='2.5vw' variant="body2">
           Prerequisites: {lesson.prerequisites}
         </Typography>}
 
         </CardContent>
         <CardContent>
-          <Typography color='white' variant="body1">
+          <Typography color='white' fontSize='2.5vw' variant="body1">
             {description}
           </Typography>
         </CardContent>
-      <CardActions sx={{pl: 2}}>
+      <CardActions sx={{pl: 2, width: '100%',}}>
         {buttons}
       </CardActions>
       </Grid>
@@ -155,7 +157,7 @@ let body;
     
 
   return (
-    <Card sx={{py: 0, boxShadow:'none',  px: 2, orderRadius: 0,
+    <Card key={lesson.id} sx={{py: 0, boxShadow:'none',  px: 2, orderRadius: 0,
       display:"flex",
       flexDirection:"row", 
       alignItems:'center',

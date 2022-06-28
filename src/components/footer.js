@@ -67,7 +67,7 @@ return(
             
             <Grid container  item  sx={{display:'flex', justifyContent:'center' }}>
               <Grid item>
-                <Typography center fontSize='12px' sx={{ml: 2,mb:2,}} color='white'>
+                <Typography fontSize='12px' sx={{ml: 2,mb:2,}} color='white'>
                 Your donation will be used to purchase practice props of varying sizes 
                 to allow people of all ages to participate.
                 </Typography>
