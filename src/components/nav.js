@@ -1,6 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import {Box, Grid, Link, Stack, Item} from '@mui/material';
+import {Box, Link, Stack} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import logo from '../logos/logowithflame.jpg'
 import NavLink from './NavLink'
@@ -15,7 +15,7 @@ var styles = {
     height: '30px',
     left: 'initial',
     right: '36px',
-    top: '36px'
+    top: '26px'
   },
   bmBurgerBars: {
     background: 'rgb(4, 215, 159)'
@@ -40,6 +40,7 @@ var styles = {
     padding: '1em',
     margin: '0 0.5em',
     fontSize: '1.15em',
+    height: '320px'
   },
   bmMorphShape: {
     fill: '#373a47'
@@ -62,48 +63,52 @@ var styles = {
   }
 }
 
-const navItems = [{name:'Classes', href:'/classes'}, {name:'About', href:'/about'}, {name:'Contact', href:'/contact'}];
+const mobileNavItems = [{name:'Home', href:'/'},{name:'Classes', href:'/classes'}, {name:'About', href:'/about'}, {name:'Contact', href:'/contact'}];
+
+const webNavItems = [{name:'Classes', href:'/classes'}, {name:'About', href:'/about'}, {name:'Contact', href:'/contact'}];
 
 function Nav(props) {
   const current = window.location.href.slice(21, window.location.href.length)
 
-const nav = navItems.map((item) => <NavLink current={current} key={item.name} sx={{width:'100%'}} name={item.name} href={item.href}/>)
+const mobileNav = mobileNavItems.map((item) => <NavLink current={current} key={item.name} sx={{width:'100%'}} name={item.name} href={item.href}/>)
+
+const webNav = webNavItems.map((item) => <NavLink current={current} key={item.name} sx={{width:'100%'}} name={item.name} href={item.href}/>)
+
 
 
 const hamburger = (<Menu 
-styles={styles} 
-right
-height={'500px'}>
-  <Stack style={{display:'flex'}} spacing={5} direction='column'>
-  {nav}
-  </Stack>
-</Menu>)
-
+  styles={styles} 
+  right>
+    <Stack style={{display:'flex'}} spacing={5} direction='column'>
+    {mobileNav}
+    </Stack>
+  </Menu>)
   
-  return (
-    <>
-
-
-      <AppBar component="nav" 
-      position='sticky' 
-      sx={{ backgroundColor: 'black'}}
-      > 
-        <Toolbar>
-          <Box
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, width: 1/4 }}
-            >
-            <Link href='/'>
-              <img src={logo} style={{mr: 1, maxWidth: '250px', width: 'auto', height:'auto'}} alt="kindojo logo"/>
-            </Link>
-          </Box>
-          {hamburger}
-        </Toolbar>
-      </AppBar>
-    </>
-  );
-}
-
-export default Nav;
+    
+    return (
+      <>
+  
+  
+        <AppBar component="nav" 
+        position='sticky' 
+        sx={{ backgroundColor: 'black'}}
+        > 
+          <Toolbar>
+            <Box
+                variant="h6"
+                component="div"
+                sx={{ flexGrow: 1, width: 1/4 }}
+              >
+              <Link href='/'>
+                <img src={logo} style={{mr: 1, maxWidth: '250px', width: 'auto', height:'auto'}} alt="kindojo logo"/>
+              </Link>
+            </Box>
+            {hamburger}
+          </Toolbar>
+        </AppBar>
+      </>
+    );
+  }
+  
+  export default Nav;
 
