@@ -95,7 +95,6 @@ const Classes = () => {
             <Typography color='white'variant='h2'>
               <ChunkyUnderline>
                   Classes
-
               </ChunkyUnderline>
             </Typography> 
             </Grid>

@@ -1,15 +1,6 @@
 import React from 'react'
 import {Link} from '@mui/material';
-// import { css } from '@emotion/react';
 
-
-// const useStyles =  makeStyles((theme) => ({
-//     hover: {
-//       "&:hover": {
-//         color: 'rgb(4, 215, 159)',
-//       }
-//     },
-//   }))
 
 const NavLink = ({name, href, current})  => {
 

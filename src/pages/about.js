@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {Box, Grid, Typography, Container, Link } from '@mui/material';
 import cyr from '../images/cyr_twinpeaks.jpg'
+import {ChunkyUnderline} from '../components/ChunkyUnderline'
+
 
 
 
@@ -13,10 +15,12 @@ const About = () => {
     <Container>
     <Grid sx={{py:1}}>
       <Typography variant='h4' sx={{pb:0}} color='white'>
+        <ChunkyUnderline>
         Nicholas Karsant
+        </ChunkyUnderline>
       </Typography>
       <Typography variant='h6' fontStyle='italic' sx={{pb:0}} color='white'>
-       Instructor
+          Instructor
       </Typography>
       <Grid container sx={{display:'flex', py:2, alignItems:'flex-start'}}>
         <Grid item xs={12} sm={6} xl={5} sx={{p:1}}>
@@ -48,7 +52,9 @@ const About = () => {
 
     <Grid sx={{pb: 2}}>
       <Typography variant='h4' color='white'>
-        What is Flow?
+        <ChunkyUnderline>
+          What is Flow?
+        </ChunkyUnderline>
       </Typography>
       <Typography sx={{lineHeight:'2', p: 1}} color='white'>
       Flow is a mental state where a person is entirely immersed in the activity; where one's skills are in balance
@@ -59,7 +65,9 @@ const About = () => {
 
     <Grid sx={{py: 1}}>
       <Typography variant='h4' color='white'>
-        What is Flow Arts?
+        <ChunkyUnderline>
+          What is Flow Arts?
+        </ChunkyUnderline>
       </Typography>
       <Typography sx={{lineHeight:'2', p: 1}} color='white'>
       From <a href="http://fundtheflowarts.org/the-flow-arts/" style={{'color':'lightblue'}} target="_ blank">fundtheflowarts.org</a>:

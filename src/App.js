@@ -24,7 +24,7 @@ function App() {
 
 
     <Nav/>
-    <div style={{padding: '25px 0 50px 0',backgroundColor: '#2F4858'}}>
+    <div style={{padding: '25px 0 50px 0',backgroundColor: '#212121'}}>
       <Route path='/'>
         <Home/>
       </Route>
