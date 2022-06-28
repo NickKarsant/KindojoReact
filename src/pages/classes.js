@@ -93,9 +93,7 @@ const Classes = () => {
         <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
           <Grid item>
             <Typography color='white'variant='h2'>
-              <ChunkyUnderline>
-                  Classes
-              </ChunkyUnderline>
+              Classes
             </Typography> 
             </Grid>
           </Grid>
