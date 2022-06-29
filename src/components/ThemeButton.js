@@ -10,7 +10,7 @@ function ThemeButton({text,onClick, target='_blank', link, type, sx}){
     },
       backgroundColor:'rgb(4, 215, 159)', 
       color: 'black',
-      fontSize: '2.5vw',
+      fontSize: '2vw',
       padding: '4px 16px 4px 16px', 
       borderRadius: '4px',...sx
       }} rel='noreferrer' type={type} target={target}>

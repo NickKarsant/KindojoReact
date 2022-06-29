@@ -88,7 +88,7 @@ const Classes = () => {
       <Grid container sx={{borderBottom: '2px solid white'}}>
         <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
           <Grid item>
-            <Typography color='white'variant='h2'>
+            <Typography color='white' variant='h3'>
               Classes
             </Typography> 
             </Grid>
@@ -107,9 +107,9 @@ const Classes = () => {
       </Grid>
 
       <Grid container sx={{borderBottom: '2px solid white', py: 4 }}>
-        <Grid container sx={{display: 'flex', justifyContent:'center'}}>
-          <Grid item >
-            <Typography color='white' sx={{px:6}} variant='h3'>
+        <Grid container xs={12} sx={{display: 'flex', justifyContent:'center'}}>
+          <Grid item xs={12} sx={{display: 'flex', justifyContent:'center'}}>
+            <Typography color='white' variant='h3'>
               Advanced Classes
             </Typography>
           </Grid>
