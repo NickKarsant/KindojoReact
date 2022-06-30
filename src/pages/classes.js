@@ -107,7 +107,7 @@ const Classes = () => {
       </Grid>
 
       <Grid container sx={{borderBottom: '2px solid white', py: 4 }}>
-        <Grid container xs={12} sx={{display: 'flex', justifyContent:'center'}}>
+        <Grid container sx={{display: 'flex', justifyContent:'center'}}>
           <Grid item xs={12} sx={{display: 'flex', justifyContent:'center'}}>
             <Typography color='white' variant='h3'>
               Advanced Classes
