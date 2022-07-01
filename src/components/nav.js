@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
-import {Box, Typography, Link, Stack} from '@mui/material';
+import {Box, Link, Stack} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import logo from '../logos/logowithflame.jpg'
 import NavLink from './NavLink'
@@ -73,7 +73,7 @@ const webNavItems = [{name:'Classes', href:'/classes'}, {name:'About', href:'/ab
 
 function Nav(props) {
   const current = window.location.href.slice(21, window.location.href.length)
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
 
   const mobileNav = mobileNavItems.map((item) => <NavLink current={current} key={item.name} sx={{width:'100%'}} name={item.name} href={item.href}/>)
 

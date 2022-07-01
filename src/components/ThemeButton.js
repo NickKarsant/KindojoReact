@@ -6,7 +6,7 @@ import useWindowSize from './useWindowSize';
 
 
 function ThemeButton({text,onClick, target='_blank', link, type, sx}){
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
   return (
     <Button href={link} onClick={onClick}  sx={{ 
     ":hover": {

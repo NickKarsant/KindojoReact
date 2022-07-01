@@ -7,13 +7,13 @@ import useWindowSize from './useWindowSize';
 
 
 const ClassCard = ({lesson, image}) => {
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
 
   let buttons;
   if (typeof lesson.videoLink === 'string') {
     let url = lesson.videoLink.replace('watch?v=', "embed/")
   const video = <iframe src={url}  
-     frameBorder="0" style={{overflow:'hidden',overflowX:'hidden',
+     frameBorder="0" title={lesson.title} style={{overflow:'hidden',overflowX:'hidden',
      overflowY:'hidden',
      height:'100%',
      width:'100%',
@@ -23,7 +23,6 @@ const ClassCard = ({lesson, image}) => {
      right:'0px',
      bottom:'0px'
      }} />
-  // buttons = video
   
   buttons =  <PopupBox content={video} />
 

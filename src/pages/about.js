@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Grid, Typography, Container } from '@mui/material';
+import {Grid, Typography} from '@mui/material';
 import cyr from '../images/cyr_twinpeaks.jpg'
 import {ChunkyUnderline} from '../components/ChunkyUnderline'
 
@@ -13,7 +13,6 @@ const About = () => {
  
   return (
     <>
-
       <Grid sx={{pb:1}}>
         <Typography variant='h4' sx={{pb:0}} color='white'>
           <ChunkyUnderline>
@@ -41,7 +40,7 @@ const About = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} xl={7} sx={{display: 'flex', justifyContent:'center'}}>
-            <img src={cyr} style={{'maxWidth': '400px', width: '100%', height: '100%', maxHeight: '400px'}} />
+            <img alt='fire spinning extended exposure' src={cyr} style={{'maxWidth': '400px', width: '100%', height: '100%', maxHeight: '400px'}} />
           </Grid>
         <Typography sx={{lineHeight:'2', p: 1, pb:0}} color='white'>
           In addition to his extensive experience spinning since 2013, Nick also worked as a Behavior Therapist
@@ -60,7 +59,7 @@ const About = () => {
         <Typography sx={{lineHeight:'2', p: 1}} color='white'>
         Flow is a mental state where a person is entirely immersed in the activity; where one's skills are in balance
         with the
-        challenges that arise. Click <a href="https://en.wikipedia.org/wiki/Flow_(psychology)" style={{'color':'lightblue'}} target="_blank">here</a> to read a more comprehensive definition of flow.
+        challenges that arise. Click <a href="https://en.wikipedia.org/wiki/Flow_(psychology)" style={{'color':'lightblue'}} rel="noreferrer" target="_blank">here</a> to read a more comprehensive definition of flow.
         </Typography>
       </Grid>
 

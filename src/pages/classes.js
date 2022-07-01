@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Container,  Grid, List, ListItem, Typography } from '@mui/material';
+import {Grid, List, ListItem, Typography } from '@mui/material';
 import ClassCard from '../components/ClassCard'
 import ThemeButton from '../components/ThemeButton'
 import cartwheel from '../images/cartwheel.png'
