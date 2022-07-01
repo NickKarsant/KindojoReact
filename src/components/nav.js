@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
-import {Box, Link, Stack} from '@mui/material';
+import {Box, Typography, Link, Stack} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import logo from '../logos/logowithflame.jpg'
 import NavLink from './NavLink'
 import { fallDown as Menu } from 'react-burger-menu'
-
+import useWindowSize from './useWindowSize';
 
 
 var mobileStyles = {
@@ -69,34 +69,24 @@ const mobileNavItems = [{name:'Home', href:'/'},{name:'Classes', href:'/classes'
 
 const webNavItems = [{name:'Classes', href:'/classes'}, {name:'About', href:'/about'}, {name:'Contact', href:'/contact'}];
 
+
+
 function Nav(props) {
   const current = window.location.href.slice(21, window.location.href.length)
+  const [width, height] = useWindowSize();
 
-const mobileNav = mobileNavItems.map((item) => <NavLink current={current} key={item.name} sx={{width:'100%'}} name={item.name} href={item.href}/>)
+  const mobileNav = mobileNavItems.map((item) => <NavLink current={current} key={item.name} sx={{width:'100%'}} name={item.name} href={item.href}/>)
 
-const webNav = webNavItems.map((item) => <NavLink current={current} key={item.name} sx={{width:'100%'}} name={item.name} href={item.href}/>)
+  const webNav = webNavItems.map((item) => <NavLink current={current} key={item.name} sx={{width:'100%'}} name={item.name} href={item.href}/>)
 
-
-
-const hamburger = (<Menu 
-  styles={mobileStyles} 
-  right>
-    <Stack style={{display:'flex'}} spacing={5} direction='column'>
-    {mobileNav}
-    </Stack>
-  </Menu>)
-
-
-const width = window.innerWidth
-// var width= Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
-useEffect(() => {
-  return () => {
-    console.log(window.innerWidth)
-  }
-}, [width])
-
-
+  const hamburger = width < 720 ? ( 
+    <Menu 
+    styles={mobileStyles} 
+    right>
+      <Stack style={{display:'flex'}} spacing={5} direction='column'>
+      {mobileNav}
+      </Stack>
+    </Menu>) : ('');
 
 
 // anything less than 560px window width should have mobile hamburger <i class="fas fa-map-marker-minus    "></i>
@@ -105,9 +95,9 @@ useEffect(() => {
     return (
         <AppBar component="nav" 
         position='sticky' 
-        sx={{ backgroundColor: 'black'}}
+        sx={{ backgroundColor: 'black', px: 0}}
         > 
-          <Toolbar>
+          <Toolbar sx={{px:0}}>
             <Box
                 variant="h6"
                 component="div"
@@ -118,7 +108,7 @@ useEffect(() => {
               </Link>
             </Box>
             {hamburger}
-            {/* {webNav} */}
+            {width > 720 && webNav}
           </Toolbar>
         </AppBar>
     );

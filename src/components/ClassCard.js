@@ -3,9 +3,11 @@ import {Card, Grid, Link, CardActions, CardContent,CardMedia,Typography} from '@
 import ThemeButton from '../components/ThemeButton'
 import PopupBox from './popUpBox'
 import { ChunkyUnderline } from '../components/ChunkyUnderline'
+import useWindowSize from './useWindowSize';
 
 
 const ClassCard = ({lesson, image}) => {
+  const [width, height] = useWindowSize();
 
   let buttons;
   if (typeof lesson.videoLink === 'string') {
@@ -150,18 +152,65 @@ let body;
       </>
     )
   }
+
+
+    let mobileCard = (
+      <Card sx={{backgroundColor:'black', pb: 3}}>
+       <CardMedia
+          component="img"
+          height="auto"
+          image={image}
+          alt={lesson.imageAlt}
+        />
+        <CardContent>
+        <Typography color='white' variant="h4" component="div">
+          <ChunkyUnderline>
+            {lesson.title}
+          </ChunkyUnderline>
+        </Typography>
+        {lesson.privatePrice &&
+        <Typography color='white' variant="body2">
+        Private/Semi-private:${lesson.privatePrice}/person/hour
+        </Typography>}
+        {lesson.groupPrice &&
+        <Typography color='white' variant="body2">
+          Groups of 5+: ${lesson.groupPrice}/person/hour
+        </Typography>}
+        {lesson.prerequisites &&
+        <Typography color='white' variant="body2">
+          Prerequisites: {lesson.prerequisites}
+        </Typography>}
+
+      </CardContent>
+      <CardContent>
+          <Typography color='white' variant="body1">
+            {description}
+          </Typography>
+        </CardContent>
+        <CardActions sx={{pl: 2, width: '100%'}}>
+        {buttons}
+      </CardActions>
+    </Card>
+    );
+  
+
+
   
     
 
   return (
-    <Card key={lesson.id} sx={{py: 0, boxShadow:'none',  px: 2, orderRadius: 0,
+    width < 720 ? (
+      mobileCard
+  ) : (
+    <Card key={lesson.id} sx={{py: 0, pb: 2, boxShadow:'none',  px: 2, borderRadius: 0,
       display:"flex",
       flexDirection:"row", 
       alignItems:'center',
-      backgroundColor: '#21212121'
+      backgroundColor: 'black'
       }}>
       {body}
     </Card>
+  ) 
   )
 }
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, List, ListItem, Typography } from '@mui/material';
+import {Container,  Grid, List, ListItem, Typography } from '@mui/material';
 import ClassCard from '../components/ClassCard'
 import ThemeButton from '../components/ThemeButton'
 import cartwheel from '../images/cartwheel.png'
@@ -84,7 +84,7 @@ const Classes = () => {
 
   
   return (
-    <>
+     <>
       <Grid container sx={{borderBottom: '2px solid white'}}>
         <Grid container sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
           <Grid item>
@@ -134,9 +134,9 @@ const Classes = () => {
           </Grid>
         </Grid>
 
+</>
 
-
-    </>
+      
     );
 }
 

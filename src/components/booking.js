@@ -56,12 +56,10 @@ const Booking = (props) => {
     };
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, 'rpxEK_3C9Avbj3iEi')
     .then((response)=>{
-      console.log('response', response)
       if (response.status === 'success') {
         alert("Message Sent.");
         this.resetForm()
       } else if (response.status === 'fail') {
-        console.log('failure')
         alert("Message failed to send.")
       }
     })
@@ -84,8 +82,8 @@ const Booking = (props) => {
 
   
   return (
-    <Container>
 
+    <>
       <Grid container item sx={{color: 'white', display:'flex', justifyContent: 'center'}}>
         <Typography variant='h2'>
         Book a Class
@@ -233,9 +231,10 @@ const Booking = (props) => {
           </Card>
         </FormGroup>
       </form>
+      </>
   
 
-    </Container>
+      
     );
 }
 

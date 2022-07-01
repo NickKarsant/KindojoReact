@@ -34,7 +34,6 @@ const Contact = () => {
         alert("Message Sent.");
         this.resetForm()
       } else if (response.status === 'fail') {
-        console.log('failure')
         alert("Message failed to send.")
       }
     })
@@ -51,7 +50,7 @@ const Contact = () => {
 
 
   return (
-    <Container>
+     <>
       <Grid container item sx={{p:0,m:0,color: 'white', display:'flex', justifyContent: 'center'}}>
         <Typography variant='h4'>
         Contact Form
@@ -97,7 +96,7 @@ const Contact = () => {
           </Grid>
         </FormGroup>
       </form>
-    </Container>
+      </>
     );
 }
 

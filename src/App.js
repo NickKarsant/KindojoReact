@@ -24,28 +24,31 @@ function App() {
 
 
     <Nav/>
-    <div style={{padding: '25px 0 50px 0',backgroundColor: '#212121'}}>
-      <Route path='/'>
-        <Home/>
-      </Route>
-      
-      <Route path='/classes'>
-        <Classes />
-      </Route>
+    {/* <div style={{backgroundColor: 'black'}}> */}
+      <Container sx={{py:4, backgroundColor: '#212121'}}>
 
-      <Route path='/about'>
-        <About />
-      </Route>
- 
-      <Route path='/contact'>
-        <Contact />
-      </Route> 
+        <Route path='/'>
+          <Home/>
+        </Route>
+        
+        <Route path='/classes'>
+          <Classes />
+        </Route>
 
-      <Route path='/booking'>
-        <Booking />
-      </Route>
+        <Route path='/about'>
+          <About />
+        </Route>
+  
+        <Route path='/contact'>
+          <Contact />
+        </Route> 
 
-      </div>
+        <Route path='/booking'>
+          <Booking />
+        </Route>
+
+      </Container>
+    {/* </div> */}
     <Footer/>
   </>
   );
