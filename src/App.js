@@ -41,11 +41,11 @@ function App() {
       </Container>
   
 
-      <Container sx={{pt:9, pb: 9, backgroundColor: '#212121'}}>
         <Route path='/contact'>
+      <Container sx={{pt:9, pb: 18, backgroundColor: '#212121'}}>
           <Contact />
-        </Route> 
       </Container>
+        </Route> 
 
     <Footer/>
   </>
