@@ -26,9 +26,10 @@ function App() {
         </Route>
 
         
-      <Container sx={{py:4, backgroundColor: '#212121'}}>
         <Route path='/classes'>
+      <Container sx={{py:4, backgroundColor: '#212121'}}>
           <Classes />
+      </Container>
         </Route>
 
         <Route path='/about'>
@@ -38,7 +39,6 @@ function App() {
         <Route path='/booking'>
           <Booking />
         </Route>
-      </Container>
   
 
         <Route path='/contact'>
