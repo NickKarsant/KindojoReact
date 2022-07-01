@@ -26,7 +26,7 @@ function App() {
         </Route>
 
         
-      <Container sx={{py:4, backgroundColor: '#212121'}}>
+      <Container sx={{py:6, backgroundColor: '#212121'}}>
         <Route path='/classes'>
           <Classes />
         </Route>
