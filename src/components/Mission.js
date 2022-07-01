@@ -6,7 +6,7 @@ import useWindowSize from './useWindowSize';
 
 function Mission() {
  
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
   
 
   return (
