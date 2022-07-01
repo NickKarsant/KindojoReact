@@ -27,7 +27,7 @@ function HeroCard() {
         <CardContent  sx={{width:'100%'}}>
           <Grid container sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
             <Grid item>
-              <Typography gutterBottom variant="h5" color="white" component="h2">
+              <Typography gutterBottom variant="h4" color="white" component="h2">
                 Find Your Flow
               </Typography>
             </Grid>

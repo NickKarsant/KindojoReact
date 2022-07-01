@@ -13,24 +13,20 @@ import { Container } from '@mui/material';
 
 
 function App() {
-  // const [home, setHome] = useState(true)
-  // const [classes, setClasses] = useState(false)
-  // const [about, setAbout] = useState(false)
-  // const [contact, setContact] = useState(false)
-  // const [booking, setBooking] = useState(false)
-
 
   return (<>
 
 
     <Nav/>
-    {/* <div style={{backgroundColor: 'black'}}> */}
-      <Container sx={{py:4, backgroundColor: '#212121'}}>
 
         <Route path='/'>
+      <Container sx={{py:0, backgroundColor: '#212121'}}>
           <Home/>
+        </Container>
         </Route>
+
         
+      <Container sx={{py:4, backgroundColor: '#212121'}}>
         <Route path='/classes'>
           <Classes />
         </Route>
@@ -38,17 +34,19 @@ function App() {
         <Route path='/about'>
           <About />
         </Route>
-  
-        <Route path='/contact'>
-          <Contact />
-        </Route> 
 
         <Route path='/booking'>
           <Booking />
         </Route>
-
       </Container>
-    {/* </div> */}
+  
+
+        <Route path='/contact'>
+      <Container sx={{pt:9, pb: 18, backgroundColor: '#212121'}}>
+          <Contact />
+      </Container>
+        </Route> 
+
     <Footer/>
   </>
   );

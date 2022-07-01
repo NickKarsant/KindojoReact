@@ -60,11 +60,16 @@ const ClassCard = ({lesson, image}) => {
 
 
   // breakpoint class descriptions need resizing for mobile
-let body;
+let webCard;
 // flip flop pictures
   if (lesson.id % 2 === 0){
-    body = (
-      <>
+    webCard = (
+      <Card key={lesson.id} sx={{py: 0, pb: 2, boxShadow:'none',  px: 2, borderRadius: 2,
+      display:"flex",
+      flexDirection:"row", 
+      alignItems:'center',
+      backgroundColor: 'black'
+      }}>
       <Grid item xs={4}>
       <CardMedia
         component="img"
@@ -105,11 +110,16 @@ let body;
       {buttons}
     </CardActions>
     </Grid>
-    </>
+    </Card>
     )
   } else {
-    body =(
-      <>
+    webCard =(
+      <Card key={lesson.id} sx={{py: 0, pb: 2, boxShadow:'none',  px: 2, borderRadius: 2,
+      display:"flex",
+      flexDirection:"row", 
+      alignItems:'center',
+      backgroundColor: 'black'
+      }}>
       <Grid item xs={8}>
         <CardContent sx={{pb: 0}}>
     
@@ -149,14 +159,15 @@ let body;
           alt={lesson.imageAlt}
         />
       </Grid>
-      </>
+      
+    </Card>
     )
   }
 
 
     let mobileCard = (
-      <Card sx={{backgroundColor:'black', pb: 3}}>
-       <CardMedia
+      <Card sx={{backgroundColor:'black', pb: 3, borderRadius: 2}}>
+        <CardMedia
           component="img"
           height="auto"
           image={image}
@@ -201,16 +212,9 @@ let body;
   return (
     width < 720 ? (
       mobileCard
-  ) : (
-    <Card key={lesson.id} sx={{py: 0, pb: 2, boxShadow:'none',  px: 2, borderRadius: 0,
-      display:"flex",
-      flexDirection:"row", 
-      alignItems:'center',
-      backgroundColor: 'black'
-      }}>
-      {body}
-    </Card>
-  ) 
+    ) : (
+      webCard
+    ) 
   )
 }
 
