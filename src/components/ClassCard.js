@@ -13,16 +13,16 @@ const ClassCard = ({lesson, image}) => {
   if (typeof lesson.videoLink === 'string') {
     let url = lesson.videoLink.replace('watch?v=', "embed/")
   const video = <iframe src={url}  
-     frameBorder="0" title={lesson.title} style={{overflow:'hidden',overflowX:'hidden',
-     overflowY:'hidden',
-     height:'100%',
-     width:'100%',
-     position:'absolute',
-     top:'0px',
-     left:'0px',
-     right:'0px',
-     bottom:'0px'
-     }} />
+    frameBorder="0" title={lesson.title} style={{overflow:'hidden',overflowX:'hidden',
+    overflowY:'hidden',
+    height:'100%',
+    width:'100%',
+    position:'absolute',
+    top:'0px',
+    left:'0px',
+    right:'0px',
+    bottom:'0px'
+    }} />
   
   buttons =  <PopupBox content={video} />
 
@@ -63,7 +63,8 @@ let webCard;
 // flip flop pictures
   if (lesson.id % 2 === 0){
     webCard = (
-      <Card key={lesson.id} sx={{py: 0, pb: 2, boxShadow:'none',  px: 2, borderRadius: 2,
+      <Card key={lesson.id} sx={{p:2, pr: 0,  boxShadow:'none',   
+      borderRadius: 2,
       display:"flex",
       flexDirection:"row", 
       alignItems:'center',
@@ -71,8 +72,8 @@ let webCard;
       }}>
       <Grid item xs={4}>
       <CardMedia
+        style={{height:'min-content'}}
         component="img"
-        height="auto"
         image={image}
         alt={lesson.imageAlt}
       />
@@ -113,7 +114,8 @@ let webCard;
     )
   } else {
     webCard =(
-      <Card key={lesson.id} sx={{py: 0, pb: 2, boxShadow:'none',  px: 2, borderRadius: 2,
+      <Card key={lesson.id} sx={{p:2, pl: 0, boxShadow:'none',
+      borderRadius: 2,
       display:"flex",
       flexDirection:"row", 
       alignItems:'center',
@@ -153,8 +155,7 @@ let webCard;
       <Grid item xs={4}>
         <CardMedia
           component="img"
-          height="auto"
-          image={image}
+            image={image}
           alt={lesson.imageAlt}
         />
       </Grid>

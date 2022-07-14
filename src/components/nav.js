@@ -15,7 +15,8 @@ var mobileStyles = {
     height: '30px',
     left: 'initial',
     right: '36px',
-    top: '26px'
+    top: '26px',
+    zIndex: '20',
   },
   bmBurgerBars: {
     background: 'rgb(4, 215, 159)'
@@ -53,13 +54,17 @@ var mobileStyles = {
   bmItem: {
     display: 'inline-block'
   },
+
+  
   bmOverlay: {
-    // border: '3px solid red',
+    border: '3px solid red',
     position:'absolute',
-    width:'100vw',
+    width:'50vw',
     height: '100vh',
-    right: '0px',
+    // right: '0px',
+    left: '0px',
     top: '0px',
+    zIndex:'10',
     background: 'rgba(0, 0, 0, 0.6)'
   }
 }
@@ -81,6 +86,7 @@ function Nav(props) {
 
   const hamburger = width < 720 ? ( 
     <Menu 
+    sx={{border: '1px solid red'}}
     styles={mobileStyles} 
     right>
       <Stack style={{display:'flex'}} spacing={5} direction='column'>
