@@ -81,8 +81,7 @@ let webCard;
 
     <Grid item xs={8}>
       <CardContent sx={{pb: 0}}>
-  
-        <Typography color='white' variant="h4" component="div">
+              <Typography color='white' variant="h4" component="div">
           <ChunkyUnderline>
             {lesson.title}
           </ChunkyUnderline>
