@@ -57,11 +57,9 @@ var mobileStyles = {
 
   
   bmOverlay: {
-    border: '3px solid red',
     position:'absolute',
-    width:'50vw',
+    width:'95vw',
     height: '100vh',
-    // right: '0px',
     left: '0px',
     top: '0px',
     zIndex:'10',
@@ -95,7 +93,6 @@ function Nav(props) {
     </Menu>) : ('');
 
 
-// anything less than 560px window width should have mobile hamburger <i class="fas fa-map-marker-minus    "></i>
   
     
     return (

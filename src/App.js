@@ -20,7 +20,7 @@ function App() {
     <Nav/>
 
         <Route path='/'>
-      <Container sx={{py:0, backgroundColor: '#212121'}}>
+      <Container sx={{py:0, m:0, backgroundColor: '#212121'}}>
           <Home/>
         </Container>
         </Route>
