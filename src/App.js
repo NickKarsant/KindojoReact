@@ -7,7 +7,7 @@ import About from './pages/about'
 import Contact from './pages/contact'
 import Footer from './components/footer'
 import Route from './components/Route'
-import { Container, Grid } from '@mui/material';
+import { Container } from '@mui/material';
 
 
 
@@ -20,8 +20,6 @@ function App() {
     <Nav/>
 
         <Route path='/'>
-
-       
           <Home/>
     
         </Route>
