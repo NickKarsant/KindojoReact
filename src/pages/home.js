@@ -7,12 +7,12 @@ import Mission from '../components/Mission'
 
 const Home = () => {
 return (
-<>
+<React.Fragment >
   <HeroCard />
   <Box sx={{ backgroundColor:'rgb(233, 248, 244)',}}>
     <Mission />
   </Box>
-</>
+</React.Fragment>
   );
 }
 

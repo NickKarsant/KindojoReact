@@ -84,7 +84,6 @@ function Nav(props) {
 
   const hamburger = width < 720 ? ( 
     <Menu 
-    // sx={{border: '1px solid red'}}
     styles={mobileStyles} 
     right>
       <Stack style={{display:'flex'}} spacing={5} direction='column'>

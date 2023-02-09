@@ -7,7 +7,7 @@ import About from './pages/about'
 import Contact from './pages/contact'
 import Footer from './components/footer'
 import Route from './components/Route'
-import { Container } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 
 
 
@@ -20,9 +20,10 @@ function App() {
     <Nav/>
 
         <Route path='/'>
-      <Container sx={{py:0, m:0, backgroundColor: '#212121'}}>
+
+       
           <Home/>
-        </Container>
+    
         </Route>
 
         
